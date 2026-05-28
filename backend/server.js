@@ -89,7 +89,7 @@ app.use('/api/negocios',    require('./src/routes/negocios'));
 if (IS_PROD) {
   const STATIC = path.join(__dirname, 'public');
   app.use(express.static(STATIC));
-  app.get('*', (req, res) => res.sendFile(path.join(STATIC, 'index.html')));
+  app.get('/{*path}', (req, res) => res.sendFile(path.join(STATIC, 'index.html')));
 }
 
 // ─── Error global ────────────────────────────────────────────────────────────
