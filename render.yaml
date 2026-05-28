@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: tecapp
+    env: node
+    plan: starter
+    buildCommand: npm run build
+    startCommand: npm start
+    disk:
+      name: tecapp-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_PATH
+        value: /data
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000

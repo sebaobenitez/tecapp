@@ -1,0 +1,14 @@
+{
+  "name": "tecapp",
+  "version": "1.0.0",
+  "description": "TecApp POS System",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build && mkdir -p ../backend/public && cp -r dist/. ../backend/public && cd ../backend && npm install",
+    "start": "node backend/server.js",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
