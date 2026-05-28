@@ -11,6 +11,7 @@ const { requireAuth } = require('./src/middleware/auth');
 const { SECRET } = require('./src/middleware/auth');
 
 const app = express();
+app.set('trust proxy', 1);
 const httpServer = http.createServer(app);
 const PORT = process.env.PORT || 3001;
 const IS_PROD = process.env.NODE_ENV === 'production';
